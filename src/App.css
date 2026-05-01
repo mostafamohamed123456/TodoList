@@ -1,0 +1,180 @@
+body {
+    margin: 0;
+    min-height: 100vh;
+    background: radial-gradient(circle at 15% 20%, #2b1b57 0%, #140923 45%, #090512 100%);
+    color: #f3f0ff;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+.app {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 24px;
+    box-sizing: border-box;
+}
+
+.todo-list-container {
+    width: min(640px, 100%);
+    background: linear-gradient(160deg, rgba(33, 21, 59, 0.92), rgba(17, 10, 31, 0.95));
+    border: 1px solid rgba(188, 160, 255, 0.22);
+    border-radius: 20px;
+    padding: 28px;
+    box-shadow: 0 20px 48px rgba(0, 0, 0, 0.45);
+}
+
+.todo-list-header h1 {
+    margin: 0 0 18px;
+    font-size: clamp(1.65rem, 3vw, 2rem);
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    color: #f8f6ff;
+}
+
+.todo-list-form {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    margin-bottom: 18px;
+}
+
+input[type="text"] {
+    flex: 1;
+    min-width: 0;
+    height: 44px;
+    padding: 0 14px;
+    border-radius: 12px;
+    border: 1px solid #4f4372;
+    background: rgba(18, 12, 33, 0.9);
+    color: #f5f3ff;
+    font: inherit;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+}
+
+input[type="text"]::placeholder {
+    color: #a89ec5;
+}
+
+input[type="text"]:focus {
+    outline: none;
+    border-color: #9e7cff;
+    box-shadow: 0 0 0 3px rgba(158, 124, 255, 0.28);
+    background: rgba(22, 15, 39, 0.95);
+}
+
+input[type="text"]:focus-visible,
+#add-button:focus-visible,
+.todo-list-item-buttons button:focus-visible {
+    outline: 2px solid #c6b3ff;
+    outline-offset: 2px;
+}
+
+#add-button {
+    height: 44px;
+    border: 1px solid transparent;
+    border-radius: 12px;
+    padding: 0 18px;
+    font: inherit;
+    font-weight: 700;
+    letter-spacing: 0.01em;
+    color: #0f0720;
+    background: linear-gradient(135deg, #e8dcff, #bca0ff);
+    cursor: pointer;
+    transition: transform 0.16s ease, filter 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: 0 8px 20px rgba(104, 71, 186, 0.38);
+}
+
+#add-button:hover {
+    filter: brightness(1.04);
+}
+
+#add-button:active {
+    transform: translateY(1px);
+    filter: brightness(0.98);
+}
+
+.todo-list-items {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.todo-list-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 14px;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 14px 16px;
+    border-radius: 14px;
+    border: 1px solid rgba(170, 146, 232, 0.35);
+    background: rgba(18, 12, 33, 0.82);
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.24);
+}
+
+.todo-list-item h2 {
+    margin: 0;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #f4f2ff;
+    text-align: left;
+    overflow-wrap: anywhere;
+}
+
+.todo-list-item-buttons {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-shrink: 0;
+}
+
+.todo-list-item-buttons button {
+    border: 1px solid transparent;
+    border-radius: 10px;
+    padding: 6px 12px;
+    font: inherit;
+    font-size: 0.92rem;
+    font-weight: 600;
+    color: #fbf9ff;
+    background: rgba(107, 82, 170, 0.3);
+    cursor: pointer;
+    transition: background-color 0.2s ease, border-color 0.2s ease, transform 0.16s ease;
+}
+
+.todo-list-item-buttons button:hover {
+    background: rgba(128, 98, 198, 0.45);
+    border-color: rgba(200, 182, 248, 0.4);
+}
+
+.todo-list-item-buttons button:active {
+    transform: translateY(1px);
+}
+
+.todo-list-item-buttons button:first-child {
+    background: rgba(194, 73, 112, 0.22);
+    border-color: rgba(235, 138, 170, 0.35);
+}
+
+.todo-list-item-buttons button:first-child:hover {
+    background: rgba(194, 73, 112, 0.34);
+}
+
+@media (max-width: 560px) {
+    .todo-list-container {
+        padding: 20px;
+    }
+
+    .todo-list-item {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .todo-list-item-buttons {
+        width: 100%;
+        justify-content: flex-end;
+    }
+}
